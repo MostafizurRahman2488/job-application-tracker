@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -29,7 +30,462 @@
         }
     </style>
 </head>
-<body>
-    
+
+<body class="bg-slate-100">
+
+
+    <main class="max-w-6xl mx-auto px-6 py-10">
+
+        <!-- Heading -->
+
+        <header class="space-y-8">
+            <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold">
+                Job Application Tracker
+            </h1>
+
+
+            <!-- Dashboard Cards -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 ">
+
+                <div class="card bg-white shadow">
+                    <div class="card-body items-center">
+                        <h2 class="text-lg font-semibold">Total</h2>
+                        <p id="total-count" class="text-5xl font-bold text-primary">0</p>
+                    </div>
+                </div>
+
+                <div class="card bg-white shadow">
+                    <div class="card-body items-center">
+                        <h2 class="text-lg font-semibold">Interview</h2>
+                        <p id="interview-count" class="text-5xl font-bold text-success">0</p>
+                    </div>
+                </div>
+
+                <div class="card bg-white shadow">
+                    <div class="card-body items-center">
+                        <h2 class="text-lg font-semibold">Rejected</h2>
+                        <p id="rejected-count" class="text-5xl font-bold text-error">0</p>
+                    </div>
+                </div>
+
+            </div>
+        </header>
+
+        <!-- line -->
+
+        <hr class="border-2 border-gray-200 my-8">
+
+        <section class="space-y-2">
+            <div class="flex justify-between items-center">
+                <h2 class="text-3xl font-bold">Available Jobs</h2>
+
+                <span id="job-count" class="badge badge-lg badge-primary">
+                    0 Jobs
+                </span>
+            </div>
+            <div class="flex gap-3 mb-3" id="toggle-btn">
+                <button id="all-btn" class="btn btn-primary">
+                    All
+                </button>
+                <button id="interview-tab-btn" class="btn">
+                    Interview
+                </button>
+                <button id="reject-tab-btn" class="btn">
+                    Rejected
+                </button>
+            </div>
+
+
+        </section>
+
+        <!-- card-section  -->
+        <section id="all-cards" class="grid grid-cols-1 gap-6 ">
+
+            <!-- Card 1 -->
+            <div class="card bg-white shadow-md">
+                <div class="card-body space-y-3">
+
+                    <div class="flex justify-between">
+                        <h2 class="card-title">
+                            Mobile First Corp
+                        </h2>
+                        <button class="btn btn-xl btn-circle btn-ghost text-red-500 hover:bg-red-100 hover:text-red-600"
+                            title="Delete Job">
+                            ✕
+                        </button>
+                    </div>
+
+                    <h3 class="font-bold text-xl">
+                        React Native Developer
+                    </h3>
+
+                    <p class="text-sm text-gray-500">
+                        Remote • Full-time • $130,000 - $175,000
+                    </p>
+
+                    <span class="job-status badge badge-neutral badge-soft">
+                        Not Applied
+                    </span>
+
+                    <p>
+                        Build cross-platform mobile applications using React Native.
+                        Work on products used by millions of users worldwide.
+                    </p>
+
+                    <div class="flex gap-4">
+                        <button
+                            class="interview-btn btn btn-outline border-2 border-emerald-500 text-emerald-500 hover:bg-emerald-500 hover:text-white uppercase font-bold px-4">
+                            Interview
+                        </button>
+
+                        <button
+                            class="reject-btn btn btn-outline border-2 border-red-500 text-red-500 hover:bg-red-500 hover:text-white uppercase font-bold px-4">
+                            Rejected
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+
+
+            <!-- Card 2 -->
+            <!-- <div class="card bg-white shadow-md">
+                <div class="card-body space-y-3">
+
+                    <div class="flex justify-between">
+                        <h2 class="card-title">
+                            WebFlow Agency
+                        </h2>
+
+                        <button class="btn btn-xl btn-circle btn-ghost text-red-500 hover:bg-red-100 hover:text-red-600"
+                            title="Delete Job">
+                            ✕
+                        </button>
+                    </div>
+
+                    <h3 class="font-bold text-xl">
+                        Web Designer & Developer
+                    </h3>
+
+                    <p class="text-sm text-gray-500">
+                        Los Angeles, CA • Part-time • $80,000 - $120,000
+                    </p>
+
+                    <span class="job-status badge badge-neutral badge-soft">
+                        Not Applied
+                    </span>
+
+                    <p>
+                        Create stunning web experiences for high-profile clients.
+                        Must have portfolio and experience with modern web design trends.
+                    </p>
+
+                    <div class="flex gap-4">
+                        <button
+                            class="interview-btn btn btn-outline border-2 border-emerald-500 text-emerald-500 hover:bg-emerald-500 hover:text-white uppercase font-bold px-4">
+                            Interview
+                        </button>
+
+                        <button
+                            class="reject-btn btn btn-outline border-2 border-red-500 text-red-500 hover:bg-red-500 hover:text-white uppercase font-bold px-4">
+                            Rejected
+                        </button>
+                    </div>
+
+                </div>
+            </div> -->
+
+            <!-- Card 3 -->
+            <!-- <div class="card bg-white shadow-md">
+                <div class="card-body space-y-3">
+
+                    <div class="flex justify-between">
+                        <h2 class="card-title">
+                            DataViz Solutions
+                        </h2>
+
+                        <button class="btn btn-xl btn-circle btn-ghost text-red-500 hover:bg-red-100 hover:text-red-600"
+                            title="Delete Job">
+                            ✕
+                        </button>
+                    </div>
+
+
+                    <h3 class="font-bold text-xl">
+                        Data Visualization Specialist
+                    </h3>
+
+                    <p class="text-sm text-gray-500">
+                        Boston, MA • Full-time • $125,000 - $165,000
+                    </p>
+
+                    <span class="job-status badge badge-neutral badge-soft">
+                        Not Applied
+                    </span>
+
+                    <p>
+                        Transform complex data into compelling visualizations.
+                        Required skills: D3.js, React and analytical thinking.
+                    </p>
+
+                    <div class="flex gap-4">
+                        <button
+                            class="interview-btn btn btn-outline border-2 border-emerald-500 text-emerald-500 hover:bg-emerald-500 hover:text-white uppercase font-bold px-4">
+                            Interview
+                        </button>
+                        <button
+                            class="reject-btn btn btn-outline border-2 border-red-500 text-red-500 hover:bg-red-500 hover:text-white uppercase font-bold px-4">
+                            Rejected
+                        </button>
+                    </div>
+
+
+                </div>
+            </div> -->
+
+            <!-- Card 4 -->
+            <!-- <div class="card bg-white shadow-md">
+                <div class="card-body space-y-3">
+
+                    <h2 class="card-title">CloudFirst Inc</h2>
+                    <div class="flex justify-between">
+                        <h2 class="card-title">
+                            Innovation Labs
+                        </h2>
+                        <button class="btn btn-xl btn-circle btn-ghost text-red-500 hover:bg-red-100 hover:text-red-600"
+                            title="Delete Job">
+                            ✕
+                        </button>
+                    </div>
+
+                    <h3 class="font-bold text-xl">
+                        Backend Developer
+                    </h3>
+
+                    <p class="text-sm text-gray-500">
+                        Seattle, WA • Full-time • $140,000 - $190,000
+                    </p>
+
+                    <span class="job-status badge badge-neutral badge-soft">
+                        Not Applied
+                    </span>
+
+
+                    <p>
+                        Design scalable backend systems using Python and AWS.
+                    </p>
+
+                    <div class="flex gap-4">
+                        <button
+                            class="interview-btn btn btn-outline border-2 border-emerald-500 text-emerald-500 hover:bg-emerald-500 hover:text-white uppercase font-bold px-4">
+                            Interview
+                        </button>
+
+                        <button
+                            class="reject-btn btn btn-outline border-2 border-red-500 text-red-500 hover:bg-red-500 hover:text-white uppercase font-bold px-4">
+                            Rejected
+                        </button>
+                    </div>
+
+
+                </div>
+            </div> -->
+
+            <!-- Card 5 -->
+            <!-- <div class="card bg-white shadow-md">
+                <div class="card-body space-y-3">
+
+                    <div class="flex justify-between">
+                        <h2 class="card-title">
+                            Innovation Labs
+                        </h2>
+                        <button class="btn btn-xl btn-circle btn-ghost text-red-500 hover:bg-red-100 hover:text-red-600"
+                            title="Delete Job">
+                            ✕
+                        </button>
+                    </div>
+
+                    <h3 class="font-bold text-xl">
+                        UI/UX Engineer
+                    </h3>
+
+                    <p class="text-sm text-gray-500">
+                        Austin, TX • Full-time • $110,000 - $150,000
+                    </p>
+
+                    <span class="job-status badge badge-neutral badge-soft">
+                        Not Applied
+                    </span>
+
+                    <p>
+                        Create beautiful and functional user interfaces.
+                    </p>
+
+                    <div class="flex gap-4">
+                        <button
+                            class="interview-btn btn btn-outline border-2 border-emerald-500 text-emerald-500 hover:bg-emerald-500 hover:text-white uppercase font-bold px-4">
+                            Interview
+                        </button>
+
+                        <button
+                            class="reject-btn btn btn-outline border-2 border-red-500 text-red-500 hover:bg-red-500 hover:text-white uppercase font-bold px-4">
+                            Rejected
+                        </button>
+                    </div>
+                </div>
+            </div> -->
+
+            <!-- Card 6 -->
+            <!-- <div class="card bg-white shadow-md">
+                <div class="card-body space-y-3">
+
+                    <div class="flex justify-between">
+                        <h2 class="card-title">
+                            MegaCorp Solutions
+                        </h2>
+                        <button class="btn btn-xl btn-circle btn-ghost text-red-500 hover:bg-red-100 hover:text-red-600"
+                            title="Delete Job">
+                            ✕
+                        </button>
+                    </div>
+
+                    <h3 class="font-bold text-xl">
+                        JavaScript Developer
+                    </h3>
+
+                    <p class="text-sm text-gray-500">
+                        New York, NY • Full-time • $130,000 - $170,000
+                    </p>
+
+                    <span class="job-status badge badge-neutral badge-soft">
+                        Not Applied
+                    </span>
+
+                    <p>
+                        Build enterprise applications with JavaScript and modern frameworks.
+                    </p>
+
+
+                    <div class="flex gap-4">
+                        <button
+                            class="interview-btn btn btn-outline border-2 border-emerald-500 text-emerald-500 hover:bg-emerald-500 hover:text-white uppercase font-bold px-4">
+                            Interview
+                        </button>
+
+                        <button
+                            class="reject-btn btn btn-outline border-2 border-red-500 text-red-500 hover:bg-red-500 hover:text-white uppercase font-bold px-4">
+                            Rejected
+                        </button>
+                    </div>
+
+                </div>
+            </div> -->
+
+            <!-- Card 7 -->
+            <!-- <div class="card bg-white shadow-md">
+                <div class="card-body space-y-3">
+
+                    <div class="flex justify-between">
+                        <h2 class="card-title">
+                            StartupXYZ
+                        </h2>
+                        <button class="btn btn-xl btn-circle btn-ghost text-red-500 hover:bg-red-100 hover:text-red-600"
+                            title="Delete Job">
+                            ✕
+                        </button>
+                    </div>
+
+                    <h3 class="font-bold text-xl">
+                        Full Stack Engineer
+                    </h3>
+
+                    <p class="text-sm text-gray-500">
+                        Remote • Full-time • $120,000 - $160,000
+                    </p>
+
+                    <span class="job-status badge badge-neutral badge-soft">
+                        Not Applied
+                    </span>
+
+
+                    <p>
+                        Work with Node.js and React on a fast-growing platform.
+                    </p>
+
+                    <div class="flex gap-4">
+                        <button
+                            class="interview-btn btn btn-outline border-2 border-emerald-500 text-emerald-500 hover:bg-emerald-500 hover:text-white uppercase font-bold px-4">
+                            Interview
+                        </button>
+
+                        <button
+                            class="reject-btn btn btn-outline border-2 border-red-500 text-red-500 hover:bg-red-500 hover:text-white uppercase font-bold px-4">
+                            Rejected
+                        </button>
+                    </div>
+
+
+                </div>
+            </div> -->
+
+            <!-- Card 8 -->
+            <!-- <div class="card bg-white shadow-md">
+                <div class="card-body space-y-3">
+
+
+                    <div class="flex justify-between">
+                        <h2 class="card-title">
+                            TechCorp Industries
+                        </h2>
+                        <button class="btn btn-xl btn-circle btn-ghost text-red-500 hover:bg-red-100 hover:text-red-600"
+                            title="Delete Job">
+                            ✕
+                        </button>
+                    </div>
+
+                    <h3 class="font-bold text-xl">
+                        Senior Frontend Developer
+                    </h3>
+
+                    <p class="text-sm text-gray-500">
+                        San Francisco, CA • Full-time • $130,000 - $175,000
+                    </p>
+
+                    <span class="job-status badge badge-neutral badge-soft">
+                        Not Applied
+                    </span>
+
+                    <p>
+                        Build scalable web applications using React and TypeScript.
+                    </p>
+
+                    <div class="flex gap-4">
+                        <button
+                            class="interview-btn btn btn-outline border-2 border-emerald-500 text-emerald-500 hover:bg-emerald-500 hover:text-white uppercase font-bold px-4">
+                            Interview
+                        </button>
+
+                        <button
+                            class="reject-btn btn btn-outline border-2 border-red-500 text-red-500 hover:bg-red-500 hover:text-white uppercase font-bold px-4">
+                            Rejected
+                        </button>
+                    </div>
+
+
+                </div>
+            </div> -->
+
+        </section>
+
+        <!-- img-section  -->
+        <section class="h-[640px] flex justify-center items-center bg-white mt-4 rounded-lg shadow-md">
+            <img src="assets/jobs.png" alt="Jobs" class="max-w-full h-auto">
+        </section>
+
+
+    </main>
+
+
 </body>
+
 </html>
