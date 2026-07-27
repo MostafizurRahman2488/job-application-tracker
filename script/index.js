@@ -103,7 +103,7 @@ document.getElementById('jobs-container').addEventListener('click', function (ev
         // updateStat()
 
     }
-updateStat()
+    updateStat()
 })
 
 function updateStat() {
@@ -122,11 +122,11 @@ function updateStat() {
     rejectedStat.innerText = counts.rejected
 
     availableStat.innerText = counts[currentTab]
-    if(counts[currentTab]<1){
-         emptyState.classList.remove('hidden')
+    if (counts[currentTab] < 1) {
+        emptyState.classList.remove('hidden')
     }
-    else{
-         emptyState.classList.add('hidden')
+    else {
+        emptyState.classList.add('hidden')
     }
 }
 updateStat()
